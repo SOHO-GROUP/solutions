@@ -1,0 +1,18 @@
+# Entorno y credenciales críticas
+.env
+.env.*
+config.local.php
+
+# Logs y temporales de servidor
+*.log
+error_log
+/tmp/
+/cache/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Configuración de editores
+.vscode/
+.idea/
