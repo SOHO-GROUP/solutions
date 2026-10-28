@@ -53,11 +53,11 @@ function initThemeSwitcher() {
     });
   };
 
-  let savedTheme = 'dark';
+  let savedTheme = 'light';
   try {
-    savedTheme = localStorage.getItem(STORAGE_KEY) || htmlEl.getAttribute('data-theme') || 'dark';
+    savedTheme = localStorage.getItem(STORAGE_KEY) || htmlEl.getAttribute('data-theme') || 'light';
   } catch (_) {
-    savedTheme = htmlEl.getAttribute('data-theme') || 'dark';
+    savedTheme = htmlEl.getAttribute('data-theme') || 'light';
   }
 
   applyTheme(savedTheme);
