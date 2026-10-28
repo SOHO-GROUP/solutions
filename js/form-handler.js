@@ -46,7 +46,7 @@
   /**
    * Default button label to restore after processing.
    */
-  const DEFAULT_SUBMIT_TEXT = 'Enviar Solicitud de Evaluación de Riesgo';
+  const DEFAULT_SUBMIT_TEXT = 'Enviar solicitud';
   const LOADING_SUBMIT_TEXT = 'Procesando protocolo de seguridad...';
 
   /**
