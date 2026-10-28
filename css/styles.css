@@ -1,0 +1,270 @@
+/* ==========================================================================
+   SOHO SOLUTIONS — Institutional & Corporate Dual-Theme Stylesheet
+   Domain: www.solutions.sohog.org
+   Official Brand Palette (from SOLUTIONS by SOHO|GROUP Logo):
+   - SOHO Solutions Teal:  #0F5E63 / #136F75 / #14888F
+   - SOHO Solutions Slate: #54626B / #475569 / #1E292E
+   - Dark Theme: Soft Slate-Petroleum (Max 20% Black) + Brand Teal/Slate
+   - Light Theme: Crisp Whites (#FFFFFF / #F4F7F8) + Brand Teal/Slate
+   ========================================================================== */
+
+:root,
+html[data-theme="dark"] {
+  --bg-primary: #1E292E;
+  --bg-secondary: #222E34;
+  --bg-surface: #28373E;
+  --bg-surface-elevated: #2F4048;
+  --bg-subcard: #1B252A;
+  --bg-input: #1A2429;
+  --border-subtle: #3A4E57;
+  --border-accent: #17858C;
+  --accent-primary: #0F5E63;
+  --accent-bright: #14888F;
+  --accent-deep: #0B484C;
+  --accent-label: #4FD1C5;
+  --accent-badge-bg: rgba(20, 136, 143, 0.2);
+  --accent-badge-border: rgba(79, 209, 197, 0.4);
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --card-shadow: 0 10px 30px -10px rgba(10, 18, 22, 0.45);
+  --card-hover-shadow: 0 16px 38px -10px rgba(15, 94, 99, 0.45), 0 0 0 1px rgba(20, 136, 143, 0.5);
+  --grid-line: rgba(148, 163, 184, 0.09);
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F4F7F8;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F8FAFC;
+  --bg-subcard: #F1F5F9;
+  --bg-input: #F8FAFC;
+  --border-subtle: #CBD5E1;
+  --border-accent: #0F5E63;
+  --accent-primary: #0F5E63;
+  --accent-bright: #136F75;
+  --accent-deep: #0B484C;
+  --accent-label: #0F5E63;
+  --accent-badge-bg: rgba(15, 94, 99, 0.1);
+  --accent-badge-border: rgba(15, 94, 99, 0.3);
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --text-muted: #54626B;
+  --card-shadow: 0 8px 24px -8px rgba(30, 41, 59, 0.08);
+  --card-hover-shadow: 0 16px 36px -10px rgba(15, 94, 99, 0.18), 0 0 0 1px rgba(15, 94, 99, 0.35);
+  --grid-line: rgba(84, 98, 107, 0.08);
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Theme-Aware Semantic Classes */
+.theme-bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.theme-bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.theme-bg-surface {
+  background-color: var(--bg-surface);
+}
+
+.theme-bg-subcard {
+  background-color: var(--bg-subcard);
+}
+
+.theme-border {
+  border-color: var(--border-subtle);
+}
+
+.theme-text-primary {
+  color: var(--text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary);
+}
+
+.theme-text-muted {
+  color: var(--text-muted);
+}
+
+.theme-accent-label {
+  color: var(--accent-label);
+}
+
+.theme-badge {
+  background-color: var(--accent-badge-bg);
+  border: 1px solid var(--accent-badge-border);
+  color: var(--accent-label);
+}
+
+/* Primary Brand CTA Button (SOHO Solutions Teal) */
+.btn-soho-primary {
+  background-color: var(--accent-primary);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px -4px rgba(15, 94, 99, 0.45);
+  transition: background-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.btn-soho-primary:hover {
+  background-color: var(--accent-bright);
+  box-shadow: 0 10px 28px -4px rgba(20, 136, 143, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Full-Width Responsive Hero Background with Aerial Port & Global Network */
+.hero-full-bg {
+  background-image: url('../assets/img/hero-bg-global-trade.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(22, 33, 38, 0.90) 0%,
+    rgba(24, 38, 44, 0.78) 48%,
+    rgba(15, 58, 64, 0.42) 100%
+  );
+}
+
+/* Architectural Background Grid */
+.bg-architectural-grid {
+  background-color: var(--bg-secondary);
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+}
+
+/* Executive Surface Card with Precision Hover */
+.executive-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease;
+}
+
+.executive-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-2px);
+}
+
+/* Reveal Animations on Scroll */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Form Input Styling & High-Contrast Focus States */
+.form-input-executive {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-input-executive::placeholder {
+  color: var(--text-muted);
+}
+
+.form-input-executive:hover {
+  border-color: var(--border-accent);
+}
+
+.form-input-executive:focus {
+  outline: none;
+  border-color: var(--accent-bright);
+  background-color: var(--bg-surface);
+  box-shadow: 0 0 0 3px rgba(20, 136, 143, 0.25);
+}
+
+/* Custom Select Arrow */
+select.form-input-executive {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  background-size: 1rem 1rem;
+  padding-right: 2.5rem;
+}
+
+/* Subtle Pulse Indicator for Active Units */
+@keyframes pulse-teal {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.15);
+  }
+}
+
+.status-dot-pulse {
+  animation: pulse-teal 2.4s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .executive-card {
+    transition: none !important;
+  }
+}

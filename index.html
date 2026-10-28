@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0F5E63" />
+  <title>SOHO | SOLUTIONS — División de Blindaje &amp; Certidumbre Operativa</title>
+  <meta name="description" content="Seguridad y confianza a quienes nos eligen: Integración de servicios altamente especializados: ingeniería fiscal, cumplimiento normativo y escudo contractual de élite. COMEXT y DEFENSE por SOHO GROUP." />
+  <meta name="keywords" content="SOHO SOLUTIONS, SOHO GROUP, COMEXT, DEFENSE, comercio exterior, aduanas, nearshoring, defensa fiscal, arquitectura contractual, blindaje corporativo" />
+  <meta name="author" content="SOHO GROUP / SOHO SOLUTIONS" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.solutions.sohog.org/" />
+
+  <!-- Open Graph / Executive Social Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SOHO | SOLUTIONS" />
+  <meta property="og:title" content="SOHO | SOLUTIONS — División de Blindaje &amp; Certidumbre Operativa" />
+  <meta property="og:description" content="Integración de servicios altamente especializados: ingeniería fiscal, cumplimiento normativo y escudo contractual de élite para corporativos y operaciones internacionales." />
+  <meta property="og:url" content="https://www.solutions.sohog.org/" />
+  <meta property="og:locale" content="es_MX" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SOHO | SOLUTIONS — Blindaje &amp; Certidumbre Operativa" />
+  <meta name="twitter:description" content="Consultoría boutique de élite en Comercio Exterior (COMEXT) y Defensa Fiscal &amp; Contractual (DEFENSE)." />
+
+  <!-- Inline SVG Favicon (SOHO Solutions Teal & Slate) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231E292E' stroke='%230F5E63' stroke-width='4'/%3E%3Cpath d='M20 20h24v8H20zM20 36h16v8H20z' fill='%23F8FAFC'/%3E%3Crect x='40' y='36' width='8' height='8' fill='%2314888F'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts Preconnect & High-Performance Load (Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Prevent Flash of Incorrect Theme -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('soho_solutions_theme');
+        var theme = saved === 'light' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Tailwind CSS CDN + Custom Brand Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            sohoTeal: {
+              DEFAULT: '#0F5E63',
+              light: '#14888F',
+              dark: '#0B484C'
+            },
+            sohoSlate: {
+              DEFAULT: '#54626B',
+              dark: '#1E292E',
+              surface: '#28373E'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="theme-bg-primary theme-text-primary antialiased selection:bg-[#0F5E63] selection:text-white min-h-screen flex flex-col">
+
+  <!-- Skip to Main Content for Screen Readers & Keyboard Accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#0F5E63] focus:text-white focus:rounded-md focus:font-semibold">
+    Saltar al contenido principal
+  </a>
+
+  <!-- ========================================================================
+       1. NAVBAR (Clean Executive White Header with Logo, Theme Switcher & CTA)
+       ======================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm" role="banner">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Brand Identity: Official SOLUTIONS by SOHO|GROUP Logo -->
+        <div class="flex items-center">
+          <a href="#" class="group inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F5E63] rounded-sm py-1" aria-label="SOHO SOLUTIONS — Inicio">
+            <img src="assets/img/logo-solutions.png"
+                 alt="SOLUTIONS by SOHO|GROUP"
+                 width="225"
+                 height="90"
+                 class="h-11 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" />
+          </a>
+        </div>
+
+        <!-- Desktop Navigation, Theme Switcher & Primary CTA -->
+        <div class="hidden lg:flex items-center gap-6">
+          <nav class="flex items-center" aria-label="Navegación Principal">
+            <a href="#servicios" class="text-sm font-bold text-slate-800 hover:text-[#0F5E63] transition-colors tracking-wide">
+              Especialidades
+            </a>
+          </nav>
+
+          <!-- Light / Dark Mode Selector Control -->
+          <button id="theme-toggle"
+                  type="button"
+                  data-theme-toggle
+                  class="inline-flex items-center gap-2 px-3.5 py-2 rounded-md text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200/80 border border-slate-300/90 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F5E63]"
+                  aria-label="Cambiar entre modo claro y modo oscuro">
+            <!-- Sun Icon (shown in Dark Mode to switch to Light) -->
+            <svg class="theme-icon-sun w-4 h-4 text-[#0F5E63]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <!-- Moon Icon (shown in Light Mode to switch to Dark) -->
+            <svg class="theme-icon-moon hidden w-4 h-4 text-[#54626B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <span class="theme-toggle-label">Modo Claro</span>
+          </button>
+
+          <!-- Primary CTA (Updated exact text per client yellow highlight) -->
+          <a href="#contacto"
+             class="btn-soho-primary inline-flex items-center gap-2.5 px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0F5E63]">
+            <span>Solicita diagnóstico | auditoría sin costo</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile Actions: Theme Toggle + Hamburger Menu Button -->
+        <div class="flex items-center gap-2 lg:hidden">
+          <button id="theme-toggle-mobile"
+                  type="button"
+                  data-theme-toggle
+                  class="inline-flex items-center gap-1.5 px-2.5 py-2 rounded-md text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F5E63]"
+                  aria-label="Cambiar entre modo claro y modo oscuro">
+            <svg class="theme-icon-sun w-4 h-4 text-[#0F5E63]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <svg class="theme-icon-moon hidden w-4 h-4 text-[#54626B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <span class="theme-toggle-label sr-only sm:not-sr-only">Modo Claro</span>
+          </button>
+
+          <button id="mobile-menu-btn" type="button"
+                  class="inline-flex items-center justify-center p-2.5 rounded-md text-slate-700 hover:text-slate-950 hover:bg-slate-100 border border-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F5E63]"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false"
+                  aria-label="Abrir menú de navegación">
+            <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 shadow-lg px-4 pt-3 pb-6 space-y-3" role="navigation" aria-label="Menú Móvil">
+      <div class="flex flex-col space-y-1">
+        <a href="#servicios" class="px-3 py-2.5 rounded-md text-sm font-bold text-slate-800 hover:bg-slate-100 hover:text-[#0F5E63] transition-colors">
+          Especialidades
+        </a>
+      </div>
+
+      <div class="pt-2 border-t border-slate-200">
+        <a href="#contacto"
+           class="btn-soho-primary w-full inline-flex items-center justify-center gap-2 px-4 py-3 text-xs font-bold uppercase tracking-wider rounded-md shadow-sm text-center">
+          <span>Solicita diagnóstico | auditoría sin costo</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content" class="flex-grow pt-20">
+
+    <!-- ======================================================================
+         2. HERO SECTION (Full-Width Responsive Aerial Port & Global Network Background)
+         ====================================================================== -->
+    <section class="relative w-full overflow-hidden hero-full-bg border-b theme-border py-20 sm:py-28 lg:py-36" aria-labelledby="hero-heading">
+      <!-- Executive Readability Gradient Overlay -->
+      <div class="absolute inset-0 hero-overlay-gradient pointer-events-none" aria-hidden="true"></div>
+
+      <!-- Subtle Vector Global Trade Network & World Map Overlay (Right Hemisphere, Responsive) -->
+      <div class="
+           absolute inset-y-0 right-0 w-full lg:w-3/5 pointer-events-none opacity-45" aria-hidden="true">
+        <svg class="w-full h-full object-cover" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Global Trade Connection Arcs -->
+          <path d="M120 380 Q 340 180 580 260" stroke="#4FD1C5" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.65" />
+          <path d="M240 440 Q 480 240 760 310" stroke="#4FD1C5" stroke-width="1.5" stroke-opacity="0.5" />
+          <path d="M310 220 Q 540 120 790 220" stroke="#99F6E4" stroke-width="1.2" stroke-dasharray="4 6" stroke-opacity="0.55" />
+          <path d="M180 290 L 380 250 L 580 260 L 720 190" stroke="#4FD1C5" stroke-width="1.2" stroke-opacity="0.45" />
+          <path d="M380 250 L 490 390 L 680 350 L 760 310" stroke="#4FD1C5" stroke-width="1.2" stroke-opacity="0.45" />
+
+          <!-- Glowing Network Hub Nodes -->
+          <g>
+            <circle cx="180" cy="290" r="14" stroke="#4FD1C5" stroke-width="1" stroke-opacity="0.4" />
+            <circle cx="180" cy="290" r="4" fill="#99F6E4" />
+
+            <circle cx="380" cy="250" r="18" stroke="#4FD1C5" stroke-width="1.2" stroke-opacity="0.5" />
+            <circle cx="380" cy="250" r="5" fill="#FFFFFF" />
+
+            <circle cx="580" cy="260" r="22" stroke="#4FD1C5" stroke-width="1.5" stroke-opacity="0.6" />
+            <circle cx="580" cy="260" r="12" stroke="#99F6E4" stroke-width="1" stroke-dasharray="3 3" />
+            <circle cx="580" cy="260" r="5.5" fill="#FFFFFF" />
+
+            <circle cx="490" cy="390" r="16" stroke="#4FD1C5" stroke-width="1.2" stroke-opacity="0.45" />
+            <circle cx="490" cy="390" r="4.5" fill="#99F6E4" />
+
+            <circle cx="720" cy="190" r="15" stroke="#4FD1C5" stroke-width="1.2" stroke-opacity="0.5" />
+            <circle cx="720" cy="190" r="4.5" fill="#FFFFFF" />
+
+            <circle cx="760" cy="310" r="18" stroke="#4FD1C5" stroke-width="1.2" stroke-opacity="0.5" />
+            <circle cx="760" cy="310" r="5" fill="#99F6E4" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl space-y-8">
+
+          <!-- Two-tier Executive H1: Imposing Main Headline + Refined Claim Subtitle -->
+          <h1 id="hero-heading" class="tracking-tight">
+            <span class="block text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.08] drop-shadow-sm">
+              Seguridad y confianza a quienes nos eligen
+            </span>
+            <span class="block mt-5 text-lg sm:text-xl lg:text-2xl font-light text-slate-100/95 leading-relaxed tracking-normal max-w-3xl">
+              Integración de servicios altamente especializados: ingeniería fiscal, cumplimiento normativo y escudo contractual de élite.
+            </span>
+          </h1>
+
+          <!-- Editorial Context Paragraph -->
+          <p class="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl font-normal">
+            En entornos regulatorios y transfronterizos de alta exigencia, la improvisación compromete el patrimonio. Diseñamos estructuras de <strong class="text-white font-semibold">certidumbre jurídica, continuidad aduanera y defensa corporativa</strong> para organizaciones que operan a escala nacional e internacional bajo el respaldo institucional de <span class="text-white font-semibold">SOHO GROUP</span>.
+          </p>
+
+          <!-- Single Primary CTA (Updated exact text per client yellow highlight) -->
+          <div class="pt-3">
+            <a href="#contacto"
+               class="btn-soho-primary inline-flex items-center justify-center gap-3 px-8 py-4 text-sm sm:text-base font-bold uppercase tracking-wider rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+              <span>Solicita diagnóstico | auditoría sin costo</span>
+              <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. CONTADORES DE AUTORIDAD (5 Authorized Metrics by WEB SOHO)
+         ====================================================================== -->
+    <section class="py-16 sm:py-22 theme-bg-secondary border-b theme-border" aria-label="Indicadores de Autoridad y Resultados Comprobados">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div>
+            <!-- Enlarged Section Subtitle per client purple mark -->
+            <span class="text-sm sm:text-base md:text-lg font-extrabold uppercase tracking-[0.18em] theme-accent-label block mb-3">
+              RESPALDO CUANTIFICABLE
+            </span>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold theme-text-primary tracking-tight">
+              Autoridad probada en litigio, fiscalización y comercio internacional
+            </h2>
+          </div>
+          <p class="text-xs sm:text-sm theme-text-secondary max-w-md">
+            Métricas institucionales auditadas bajo el estándar de excelencia de SOHO GROUP.
+          </p>
+        </div>
+
+        <!-- 5 Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
+
+          <!-- Counter 1: + 100 Diagnósticos -->
+          <article class="executive-card rounded-lg p-6 flex flex-col justify-between reveal-on-scroll">
+            <div>
+              <div class="w-10 h-1 bg-[#0F5E63] mb-4 rounded-full" aria-hidden="true"></div>
+              <p class="text-xl sm:text-2xl font-extrabold theme-text-primary tracking-tight leading-snug"
+                 data-counter-target="100"
+                 data-counter-prefix="+ "
+                 data-counter-suffix=" Diagnósticos"
+                 data-counter-exact="+ 100 Diagnósticos"
+                 aria-label="+ 100 Diagnósticos">
+                + 100 Diagnósticos
+              </p>
+            </div>
+            <p class="text-xs theme-text-secondary mt-3 leading-relaxed">
+              Auditorías preventivas forenses en operaciones corporativas y comercio exterior.
+            </p>
+          </article>
+
+          <!-- Counter 2: + 20 Socios SOLUTIONS -->
+          <article class="executive-card rounded-lg p-6 flex flex-col justify-between reveal-on-scroll">
+            <div>
+              <div class="w-10 h-1 bg-[#0F5E63] mb-4 rounded-full" aria-hidden="true"></div>
+              <p class="text-xl sm:text-2xl font-extrabold theme-text-primary tracking-tight leading-snug"
+                 data-counter-target="20"
+                 data-counter-prefix="+ "
+                 data-counter-suffix=" Socios SOLUTIONS"
+                 data-counter-exact="+ 20 Socios SOLUTIONS"
+                 aria-label="+ 20 Socios SOLUTIONS">
+                + 20 Socios SOLUTIONS
+              </p>
+            </div>
+            <p class="text-xs theme-text-secondary mt-3 leading-relaxed">
+              Especialistas senior en derecho aduanero, defensa fiscal e ingeniería contractual.
+            </p>
+          </article>
+
+          <!-- Counter 3: + 30 Blindajes Fiscales -->
+          <article class="executive-card rounded-lg p-6 flex flex-col justify-between reveal-on-scroll">
+            <div>
+              <div class="w-10 h-1 bg-[#0F5E63] mb-4 rounded-full" aria-hidden="true"></div>
+              <p class="text-xl sm:text-2xl font-extrabold theme-text-primary tracking-tight leading-snug"
+                 data-counter-target="30"
+                 data-counter-prefix="+ "
+                 data-counter-suffix=" Blindajes Fiscales"
+                 data-counter-exact="+ 30 Blindajes Fiscales"
+                 aria-label="+ 30 Blindajes Fiscales">
+                + 30 Blindajes Fiscales
+              </p>
+            </div>
+            <p class="text-xs theme-text-secondary mt-3 leading-relaxed">
+              Arquitecturas de protección patrimonial y materialidad probatoria implementadas.
+            </p>
+          </article>
+
+          <!-- Counter 4: + 50 Juicios Fiscales -->
+          <article class="executive-card rounded-lg p-6 flex flex-col justify-between reveal-on-scroll">
+            <div>
+              <div class="w-10 h-1 bg-[#0F5E63] mb-4 rounded-full" aria-hidden="true"></div>
+              <p class="text-xl sm:text-2xl font-extrabold theme-text-primary tracking-tight leading-snug"
+                 data-counter-target="50"
+                 data-counter-prefix="+ "
+                 data-counter-suffix=" Juicios Fiscales"
+                 data-counter-exact="+ 50 Juicios Fiscales"
+                 aria-label="+ 50 Juicios Fiscales">
+                + 50 Juicios Fiscales
+              </p>
+            </div>
+            <p class="text-xs theme-text-secondary mt-3 leading-relaxed">
+              Litigios estratégicos y medios de defensa de alta cuantía resueltos con rigor.
+            </p>
+          </article>
+
+          <!-- Counter 5: + 100K millones optimizados -->
+          <article class="executive-card rounded-lg p-6 flex flex-col justify-between sm:col-span-2 lg:col-span-1 reveal-on-scroll">
+            <div>
+              <div class="w-10 h-1 bg-[#0F5E63] mb-4 rounded-full" aria-hidden="true"></div>
+              <p class="text-xl sm:text-2xl font-extrabold theme-text-primary tracking-tight leading-snug"
+                 data-counter-target="100"
+                 data-counter-prefix="+ "
+                 data-counter-suffix="K millones optimizados"
+                 data-counter-exact="+ 100K millones optimizados"
+                 aria-label="+ 100K millones optimizados">
+                + 100K millones optimizados
+              </p>
+            </div>
+            <p class="text-xs theme-text-secondary mt-3 leading-relaxed">
+              Flujo transaccional y contingencias mitigadas con estricto apego normativo.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. SECCIÓN ESPECIALIDADES ACTIVAS (id="servicios" — SOLO 2 UNIDADES ACTIVAS)
+         ====================================================================== -->
+    <section id="servicios" class="py-20 sm:py-28 theme-bg-primary border-b theme-border scroll-mt-20" aria-labelledby="servicios-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Editorial Header -->
+        <div class="max-w-3xl mb-14">
+          <!-- Enlarged Section Subtitle per client purple mark -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-md theme-bg-surface border theme-border mb-4 shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#0F5E63]" aria-hidden="true"></span>
+            <span class="text-sm sm:text-base md:text-lg font-extrabold uppercase tracking-[0.18em] theme-accent-label">
+              UNIDADES DE INTERVENCIÓN INMEDIATA
+            </span>
+          </div>
+          <h2 id="servicios-heading" class="text-3xl sm:text-4xl font-extrabold theme-text-primary tracking-tight leading-tight">
+            Especialidades Operativas Activas
+          </h2>
+          <p class="mt-4 text-base sm:text-lg theme-text-secondary leading-relaxed">
+            Intervenimos directamente a través de dos divisiones tácticas contratables de forma inmediata, diseñadas para neutralizar riesgos aduaneros, fiscales y societarios antes de que escalen a contingencias críticas.
+          </p>
+        </div>
+
+        <!-- 2 Active Units Grid (COMEXT & DEFENSE Only) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+          <!-- ACTIVE UNIT 1: COMEXT -->
+          <article class="executive-card rounded-xl p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden reveal-on-scroll">
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-[#0F5E63]" aria-hidden="true"></div>
+
+            <div>
+              <!-- Top Badge & Code -->
+              <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full theme-bg-subcard border theme-border">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 status-dot-pulse" aria-hidden="true"></span>
+                  <span class="text-[11px] font-bold uppercase tracking-[0.18em] theme-text-primary">
+                    UNIDAD OPERATIVA ACTIVA
+                  </span>
+                </div>
+                <span class="text-xs font-mono uppercase tracking-widest theme-text-muted">
+                  DIV // 01 — COMEXT
+                </span>
+              </div>
+
+              <!-- Official Logo + Title & Core Description -->
+              <div class="mb-6">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
+                  <div class="inline-flex items-center justify-center bg-white rounded-xl p-3 shadow-md border border-slate-200/90 shrink-0 w-20 h-20">
+                    <img src="assets/img/logo-comext.png"
+                         alt="Logo Oficial COMEXT"
+                         width="80"
+                         height="80"
+                         class="w-full h-full object-contain" />
+                  </div>
+                  <div>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold theme-text-primary tracking-tight flex flex-wrap items-center gap-3">
+                      <span>COMEXT</span>
+                      <span class="text-xs font-semibold uppercase tracking-widest px-2.5 py-1 rounded theme-badge">
+                        Comercio Exterior &amp; Aduanas
+                      </span>
+                    </h3>
+                    <p class="mt-2 text-base theme-text-secondary leading-relaxed">
+                      Consultoría en comercio exterior, aduanas, nearshoring y logística internacional. Blindamos la trazabilidad documental y arancelaria de sus operaciones transfronterizas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Key Capabilities Breakdown -->
+              <div class="border-t theme-border pt-6 mb-8">
+                <h4 class="text-xs font-bold uppercase tracking-[0.18em] theme-text-muted mb-4">
+                  CAPACIDADES CLAVE DE INTERVENCIÓN
+                </h4>
+                <ul class="space-y-3 text-sm theme-text-secondary">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 theme-accent-label shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong class="theme-text-primary">Cumplimiento Aduanero Integral:</strong> Revisión normativa, valoración aduanera, reglas de origen (T-MEC / Tratados) y gestión de padrones sectoriales.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 theme-accent-label shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong class="theme-text-primary">Programas IMMEX, PROSEC y Certificación IVA/IEPS:</strong> Obtención, administración de Anexo 24 / Anexo 30 y blindaje permanente de certificaciones OEA/RECE.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 theme-accent-label shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong class="theme-text-primary">Clasificación Arancelaria &amp; RRNA:</strong> Dictámenes técnicos arancelarios y cumplimiento exacto de Regulaciones y Restricciones No Arancelarias y NOMs.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 theme-accent-label shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong class="theme-text-primary">Auditorías Preventivas de Comercio Exterior:</strong> Compulsa de Data Stage (Glosa), expediente electrónico de activo fijo y simulacros de facultades de comprobación.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 theme-accent-label shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong class="theme-text-primary">Estructuración de Operaciones Nearshoring:</strong> Soft-landing industrial, transferencia de líneas productivas y diseño aduanero-logístico de alta eficiencia.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Direct Contracting CTA for COMEXT (Updated to "Solicitar Reunión COMEXT" per client green highlight) -->
+            <div class="pt-4 border-t theme-border">
+              <a href="#contacto"
+                 data-select-service="Consultoría en Comercio Exterior y Aduanas (COMEXT)"
+                 class="btn-soho-primary w-full inline-flex items-center justify-between px-6 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F5E63]">
+                <span>Solicitar Reunión COMEXT</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ACTIVE UNIT 2: DEFENSE -->
+          <article class="executive-card rounded-xl p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden reveal-on-scroll">
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-[#0F5E63]" aria-hidden="true"></div>
+
+            <div>
+              <!-- Top Badge & Code -->
+              <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full theme-bg-subcard border theme-border">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 status-dot-pulse" aria-hidden="true"></span>
+                  <span class="text-[11px] font-bold uppercase tracking-[0.18em] theme-text-primary">
+                    UNIDAD OPERATIVA ACTIVA
+                  </span>
+                </div>
+                <span class="text-xs font-mono uppercase tracking-widest theme-text-muted">
+                  DIV // 02 — DEFENSE
+                </span>
+              </div>
+
+              <!-- Official Logo + Title & Core Description -->
+              <div class="mb-6">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
+                  <div class="inline-flex items-center justify-center bg-white rounded-xl p-3 shadow-md border border-slate-200/90 shrink-0 w-20 h-20">
+                    <img src="assets/img/logo-defense.png"
+                         alt="Logo Oficial DEFENSE"
+                         width="80"
+                         height="80"
+                         class="w-full h-full object-contain" />
+                  </div>
+                  <div>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold theme-text-primary tracking-tight flex flex-wrap items-center gap-3">
+                      <span>DEFENSE</span>
+                      <span class="text-xs font-semibold uppercase tracking-widest px-2.5 py-1 rounded theme-badge">
+                        Defensa Fiscal &amp; Corporativa
+                      </span>
+                    </h3>
+                    <p class="mt-2 text-base theme-text-secondary leading-relaxed">
+                      Derecho corporativo preventivo, arquitectura contractual blindada y litigio estratégico fiscal/mercantil. Protegemos la continuidad patrimonial y la toma de decisiones del consejo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Key Capabilities Breakdown -->
+              <div class="border-t theme-border pt-6 mb-8">
+                <h4 class="text-xs font-bold uppercase tracking-[0.18em] theme-text-muted mb-4">
+                  CAPACIDADES CLAVE DE INTERVENCIÓN
+                </h4>
+                <ul class="space-y-3 text-sm theme-text-secondary">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 theme-accent-label shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong class="theme-text-primary">Escudo Societario &amp; Gobierno Corporativo:</strong> Estructuración de holdings, acuerdos de accionistas, blindaje de administradores y trazabilidad corporativa.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 theme-accent-label shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong class="theme-text-primary">Contratos Mercantiles de Alta Complejidad:</strong> Ingeniería contractual con cláusulas de salida, mitigación de responsabilidad, fecha cierta y razón de negocios.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 theme-accent-label shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong class="theme-text-primary">Medios de Defensa Fiscal &amp; Administrativa:</strong> Recursos de revocación, juicios contenciosos administrativos (juicio de nulidad) y amparo directo/indirecto.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 theme-accent-label shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong class="theme-text-primary">Atención a Actos de Fiscalización:</strong> Acompañamiento táctico en visitas domiciliarias, revisiones de gabinete, PAMA, cartas invitación y acuerdos conclusivos ante PRODECON.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 theme-accent-label shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong class="theme-text-primary">Litigio Estratégico Mercantil y Patrimonial:</strong> Recuperación de activos críticos, controversias societarias y defensa ante inmovilización de cuentas o sellos digitales.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Direct Contracting CTA for DEFENSE (Updated to "Solicitar Reunión DEFENSE" per client green highlight) -->
+            <div class="pt-4 border-t theme-border">
+              <a href="#contacto"
+                 data-select-service="Defensa Fiscal y Arquitectura Contractual (DEFENSE)"
+                 class="btn-soho-primary w-full inline-flex items-center justify-between px-6 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F5E63]">
+                <span>Solicitar Reunión DEFENSE</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. VISIÓN DE BLINDAJE INTEGRAL (id="blindaje" — Clean Executive Banner)
+         Per client red mark: removed the 2 conceptual cards & governance note,
+         retaining the enlarged section subtitle, heading, and editorial description.
+         ====================================================================== -->
+    <section id="blindaje" class="py-16 sm:py-24 theme-bg-secondary border-b theme-border relative overflow-hidden scroll-mt-20" aria-labelledby="blindaje-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Clean Executive Architectural Banner -->
+        <div class="rounded-2xl theme-bg-surface border theme-border p-8 sm:p-12 lg:p-14 shadow-lg relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1.5 bg-[#0F5E63]" aria-hidden="true"></div>
+
+          <div class="max-w-4xl">
+            <!-- Enlarged Section Subtitle per client purple mark -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-md theme-bg-subcard border theme-border mb-5">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#0F5E63]" aria-hidden="true"></span>
+              <span class="text-sm sm:text-base md:text-lg font-extrabold uppercase tracking-[0.18em] theme-accent-label">
+                ARQUITECTURA SIMBIÓTICA // SOHO GROUP
+              </span>
+            </div>
+            <h2 id="blindaje-heading" class="text-2xl sm:text-4xl font-extrabold theme-text-primary tracking-tight leading-tight">
+              Visión de Blindaje Integral: Ecosistema Modular Escalable
+            </h2>
+            <p class="mt-4 text-base sm:text-lg theme-text-secondary leading-relaxed">
+              La verdadera certidumbre corporativa exige que la estrategia legal y aduanera no opere aislada de la realidad financiera y física del negocio. Dentro de la arquitectura del holding <strong class="theme-text-primary font-semibold">SOHO GROUP</strong>, nuestras unidades activas (<span class="theme-accent-label font-bold">COMEXT</span> y <span class="theme-accent-label font-bold">DEFENSE</span>) se articulan simbióticamente con capacidades modulares de soporte estructural (<span class="font-semibold theme-text-primary">ACCOUNTING</span> y <span class="font-semibold theme-text-primary">LOGIMEX</span>) que se habilitan cuando la escala del proyecto lo demanda.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. SECCIÓN DE METODOLOGÍA / ESTÁNDAR DE EJECUCIÓN
+         ====================================================================== -->
+    <section id="metodologia" class="py-20 sm:py-28 theme-bg-primary border-b theme-border scroll-mt-20" aria-labelledby="metodologia-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="max-w-3xl mb-14">
+          <!-- Enlarged Section Subtitle per client purple mark -->
+          <span class="text-sm sm:text-base md:text-lg font-extrabold uppercase tracking-[0.18em] theme-accent-label block mb-3">
+            PROTOCOLO DE INTERVENCIÓN EJECUTIVA
+          </span>
+          <h2 id="metodologia-heading" class="text-3xl sm:text-4xl font-extrabold theme-text-primary tracking-tight">
+            Estándar de Ejecución de Cuatro Fases
+          </h2>
+          <p class="mt-4 text-base sm:text-lg theme-text-secondary leading-relaxed">
+            Metodología estructurada bajo rigor forense para transformar vulnerabilidades regulatorias en ventajas competitivas blindadas.
+          </p>
+        </div>
+
+        <!-- 4 Pillars Architectural Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Pillar 01 -->
+          <div class="executive-card rounded-xl p-7 flex flex-col justify-between reveal-on-scroll">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <!-- Enlarged Phase Badge per client purple mark -->
+                <span class="text-sm sm:text-base font-mono font-extrabold theme-accent-label px-3.5 py-1.5 rounded-md theme-bg-subcard border theme-border tracking-widest">
+                  FASE // 01
+                </span>
+                <span class="w-8 h-[1px] bg-current opacity-20" aria-hidden="true"></span>
+              </div>
+              <h3 class="text-lg font-bold theme-text-primary mb-3">
+                Diagnóstico Forense
+              </h3>
+              <p class="text-sm theme-text-secondary leading-relaxed">
+                Auditoría exhaustiva de expedientes aduaneros, estructura societaria, contratos vigentes y exposición ante autoridades fiscales para mapear brechas reales.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t theme-border text-[11px] font-mono uppercase tracking-wider theme-text-muted">
+              ENTREGABLE: MATRIZ DE RIESGO
+            </div>
+          </div>
+
+          <!-- Pillar 02 -->
+          <div class="executive-card rounded-xl p-7 flex flex-col justify-between reveal-on-scroll">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <!-- Enlarged Phase Badge per client purple mark -->
+                <span class="text-sm sm:text-base font-mono font-extrabold theme-accent-label px-3.5 py-1.5 rounded-md theme-bg-subcard border theme-border tracking-widest">
+                  FASE // 02
+                </span>
+                <span class="w-8 h-[1px] bg-current opacity-20" aria-hidden="true"></span>
+              </div>
+              <h3 class="text-lg font-bold theme-text-primary mb-3">
+                Arquitectura de Blindaje
+              </h3>
+              <p class="text-sm theme-text-secondary leading-relaxed">
+                Diseño de la ingeniería legal, arancelaria y contractual a la medida. Construcción de soporte documental de materialidad, razón de negocios y cumplimiento normativo.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t theme-border text-[11px] font-mono uppercase tracking-wider theme-text-muted">
+              ENTREGABLE: PROTOCOLO DE ESCUDO
+            </div>
+          </div>
+
+          <!-- Pillar 03 -->
+          <div class="executive-card rounded-xl p-7 flex flex-col justify-between reveal-on-scroll">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <!-- Enlarged Phase Badge per client purple mark -->
+                <span class="text-sm sm:text-base font-mono font-extrabold theme-accent-label px-3.5 py-1.5 rounded-md theme-bg-subcard border theme-border tracking-widest">
+                  FASE // 03
+                </span>
+                <span class="w-8 h-[1px] bg-current opacity-20" aria-hidden="true"></span>
+              </div>
+              <h3 class="text-lg font-bold theme-text-primary mb-3">
+                Implementación Táctica
+              </h3>
+              <p class="text-sm theme-text-secondary leading-relaxed">
+                Ejecución directa por socios especialistas: regularización de operaciones de comercio exterior, formalización de instrumentos societarios o interposición de defensa.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t theme-border text-[11px] font-mono uppercase tracking-wider theme-text-muted">
+              ENTREGABLE: EJECUCIÓN BLINDADA
+            </div>
+          </div>
+
+          <!-- Pillar 04 -->
+          <div class="executive-card rounded-xl p-7 flex flex-col justify-between reveal-on-scroll">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <!-- Enlarged Phase Badge per client purple mark -->
+                <span class="text-sm sm:text-base font-mono font-extrabold theme-accent-label px-3.5 py-1.5 rounded-md theme-bg-subcard border theme-border tracking-widest">
+                  FASE // 04
+                </span>
+                <span class="w-8 h-[1px] bg-current opacity-20" aria-hidden="true"></span>
+              </div>
+              <h3 class="text-lg font-bold theme-text-primary mb-3">
+                Monitoreo Continuo
+              </h3>
+              <p class="text-sm theme-text-secondary leading-relaxed">
+                Vigilancia permanente ante reformas fiscales, actualizaciones de Reglas Generales de Comercio Exterior (RGCE) y acompañamiento preventivo en comités directivos.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t theme-border text-[11px] font-mono uppercase tracking-wider theme-text-muted">
+              ENTREGABLE: CERTIDUMBRE CONTINUA
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. FORMULARIO DE EVALUACIÓN DE RIESGOS (id="contacto")
+         Strict Backend Contract Compliance (#risk-assessment-form)
+         ====================================================================== -->
+    <section id="contacto" class="py-20 sm:py-28 bg-architectural-grid relative scroll-mt-20" aria-labelledby="contacto-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-start">
+
+          <!-- Left Column: Confidentiality Protocol & Executive Response Context (5 cols) -->
+          <div class="lg:col-span-5 space-y-8">
+            <div>
+              <h2 id="contacto-heading" class="text-3xl sm:text-4xl font-extrabold theme-text-primary tracking-tight leading-tight">
+                Solicite una Evaluación Ejecutiva de Riesgo
+              </h2>
+              <p class="mt-4 text-base theme-text-secondary leading-relaxed">
+                Cada solicitud es evaluada directamente por un socio director de <strong class="theme-text-primary">COMEXT</strong> o <strong class="theme-text-primary">DEFENSE</strong> para estructurar una hoja de ruta preliminar con total reserva institucional.
+              </p>
+            </div>
+
+            <!-- Executive Guarantees Cards -->
+            <div class="space-y-4">
+              <div class="p-5 rounded-lg theme-bg-surface border theme-border flex items-start gap-4 shadow-sm">
+                <div class="p-2.5 rounded-md theme-bg-subcard border theme-border theme-accent-label shrink-0">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold theme-text-primary">Protocolo de Confidencialidad &amp; NDA</h3>
+                  <p class="text-xs theme-text-secondary mt-1 leading-relaxed">
+                    Toda información compartida se encuentra protegida bajo secreto profesional y convenio de confidencialidad corporativo desde el primer contacto.
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-5 rounded-lg theme-bg-surface border theme-border flex items-start gap-4 shadow-sm">
+                <div class="p-2.5 rounded-md theme-bg-subcard border theme-border theme-accent-label shrink-0">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold theme-text-primary">Tiempo de Respuesta Ejecutiva (&lt; 24 Horas Hábiles)</h3>
+                  <p class="text-xs theme-text-secondary mt-1 leading-relaxed">
+                    Asignación inmediata de mesa técnica según la prioridad operativa (actos de autoridad en curso, despachos aduaneros o blindaje preventivo).
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-5 rounded-lg theme-bg-surface border theme-border flex items-start gap-4 shadow-sm">
+                <div class="p-2.5 rounded-md theme-bg-subcard border theme-border theme-accent-label shrink-0">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold theme-text-primary">Atención Directa por Socios Especialistas</h3>
+                  <p class="text-xs theme-text-secondary mt-1 leading-relaxed">
+                    Sin intermediarios comerciales. Su caso es analizado por titulares de área con experiencia comprobada en litigio y comercio exterior.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Risk Assessment Form Card (7 cols) -->
+          <div class="lg:col-span-7">
+            <div class="rounded-xl theme-bg-surface border theme-border p-6 sm:p-10 shadow-xl relative">
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-[#0F5E63] rounded-t-xl" aria-hidden="true"></div>
+
+              <div class="mb-8 pb-5 border-b theme-border flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                  <h3 class="text-lg sm:text-xl font-bold theme-text-primary">Formulario de Evaluación de Riesgo</h3>
+                  <p class="text-xs theme-text-muted mt-1">Complete los datos corporativos para agendar su sesión diagnóstica.</p>
+                </div>
+                <span class="text-[11px] font-mono theme-text-muted">REF // SOHO-SOL-2026</span>
+              </div>
+
+              <!-- STRICT CONTRACT FORM FOR BACKEND: id="risk-assessment-form" novalidate -->
+              <form id="risk-assessment-form" novalidate class="space-y-5">
+
+                <!-- Row 1: Nombre Completo & Empresa / Organización -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <!-- Field 1: Nombre Completo -->
+                  <div>
+                    <label for="nombre" class="block text-xs font-semibold uppercase tracking-wider theme-text-primary mb-2">
+                      Nombre Completo <span class="theme-accent-label" aria-hidden="true">*</span>
+                    </label>
+                    <input type="text"
+                           id="nombre"
+                           name="nombre"
+                           required
+                           autocomplete="name"
+                           placeholder="Ej. Lic. Alejandro Mendoza"
+                           class="form-input-executive w-full rounded-md px-4 py-3 text-sm" />
+                    <p class="error-msg hidden text-xs text-red-400 mt-1" id="error-nombre" role="alert"></p>
+                  </div>
+
+                  <!-- Field 2: Empresa / Organización -->
+                  <div>
+                    <label for="empresa" class="block text-xs font-semibold uppercase tracking-wider theme-text-primary mb-2">
+                      Empresa / Organización <span class="theme-accent-label" aria-hidden="true">*</span>
+                    </label>
+                    <input type="text"
+                           id="empresa"
+                           name="empresa"
+                           required
+                           autocomplete="organization"
+                           placeholder="Ej. Grupo Industrial del Norte S.A. de C.V."
+                           class="form-input-executive w-full rounded-md px-4 py-3 text-sm" />
+                    <p class="error-msg hidden text-xs text-red-400 mt-1" id="error-empresa" role="alert"></p>
+                  </div>
+                </div>
+
+                <!-- Row 2: Correo Corporativo & WhatsApp / Teléfono -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <!-- Field 3: Correo Corporativo -->
+                  <div>
+                    <label for="email" class="block text-xs font-semibold uppercase tracking-wider theme-text-primary mb-2">
+                      Correo Corporativo <span class="theme-accent-label" aria-hidden="true">*</span>
+                    </label>
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           required
+                           autocomplete="email"
+                           placeholder="direccion@empresa.com"
+                           class="form-input-executive w-full rounded-md px-4 py-3 text-sm" />
+                    <p class="error-msg hidden text-xs text-red-400 mt-1" id="error-email" role="alert"></p>
+                  </div>
+
+                  <!-- Field 4: WhatsApp / Teléfono (10 dígitos) -->
+                  <div>
+                    <label for="whatsapp" class="block text-xs font-semibold uppercase tracking-wider theme-text-primary mb-2">
+                      WhatsApp / Teléfono (10 dígitos) <span class="theme-accent-label" aria-hidden="true">*</span>
+                    </label>
+                    <input type="tel"
+                           id="whatsapp"
+                           name="whatsapp"
+                           required
+                           autocomplete="tel"
+                           maxlength="15"
+                           placeholder="5512345678"
+                           class="form-input-executive w-full rounded-md px-4 py-3 text-sm" />
+                    <p class="error-msg hidden text-xs text-red-400 mt-1" id="error-whatsapp" role="alert"></p>
+                  </div>
+                </div>
+
+                <!-- Row 3: Tipo de Operación & Área de Necesidad Prioritaria -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <!-- Field 5: Tipo de Operación -->
+                  <div>
+                    <label for="tipo_operacion" class="block text-xs font-semibold uppercase tracking-wider theme-text-primary mb-2">
+                      Tipo de Operación
+                    </label>
+                    <select id="tipo_operacion"
+                            name="tipo_operacion"
+                            class="form-input-executive w-full rounded-md px-4 py-3 text-sm">
+                      <option value="" disabled selected>Seleccione perfil operativo...</option>
+                      <option value="Importación / Exportación">Importación / Exportación</option>
+                      <option value="Manufactura / IMMEX / Nearshoring">Manufactura / IMMEX / Nearshoring</option>
+                      <option value="Operaciones Nacionales Corporativas">Operaciones Nacionales Corporativas</option>
+                      <option value="Holding / Grupo Empresarial">Holding / Grupo Empresarial</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                    <p class="error-msg hidden text-xs text-red-400 mt-1" id="error-tipo_operacion" role="alert"></p>
+                  </div>
+
+                  <!-- Field 6: Área de Necesidad Prioritaria -->
+                  <div>
+                    <label for="area_necesidad" class="block text-xs font-semibold uppercase tracking-wider theme-text-primary mb-2">
+                      Área de Necesidad Prioritaria
+                    </label>
+                    <select id="area_necesidad"
+                            name="area_necesidad"
+                            class="form-input-executive w-full rounded-md px-4 py-3 text-sm">
+                      <option value="" disabled selected>Seleccione unidad de intervención...</option>
+                      <option value="Consultoría en Comercio Exterior y Aduanas (COMEXT)">Consultoría en Comercio Exterior y Aduanas (COMEXT)</option>
+                      <option value="Defensa Fiscal y Arquitectura Contractual (DEFENSE)">Defensa Fiscal y Arquitectura Contractual (DEFENSE)</option>
+                      <option value="Auditoría Preventiva Integral (COMEXT + DEFENSE)">Auditoría Preventiva Integral (COMEXT + DEFENSE)</option>
+                    </select>
+                    <p class="error-msg hidden text-xs text-red-400 mt-1" id="error-area_necesidad" role="alert"></p>
+                  </div>
+                </div>
+
+                <!-- Field 7: Mensaje / Contexto Operativo -->
+                <div>
+                  <label for="mensaje" class="block text-xs font-semibold uppercase tracking-wider theme-text-primary mb-2">
+                    Mensaje / Contexto Operativo
+                  </label>
+                  <textarea id="mensaje"
+                            name="mensaje"
+                            rows="4"
+                            placeholder="Describa brevemente el alcance de su operación, requerimiento preventivo o situación actual ante autoridades..."
+                            class="form-input-executive w-full rounded-md px-4 py-3 text-sm resize-y"></textarea>
+                  <p class="error-msg hidden text-xs text-red-400 mt-1" id="error-mensaje" role="alert"></p>
+                </div>
+
+                <!-- Form Feedback Container (Strict Contract ID: form-feedback) -->
+                <div id="form-feedback" class="hidden rounded-md p-4 text-sm font-medium" role="status" aria-live="polite"></div>
+
+                <!-- Submit Button (Strict Contract IDs: submit-btn, submit-text, submit-spinner) -->
+                <div class="pt-2">
+                  <button type="submit"
+                          id="submit-btn"
+                          class="btn-soho-primary w-full inline-flex items-center justify-center gap-3 px-7 py-4 text-sm font-bold uppercase tracking-widest rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F5E63] disabled:opacity-60 disabled:cursor-not-allowed">
+                    <span id="submit-text">Enviar Solicitud de Evaluación de Riesgo</span>
+                    <svg id="submit-spinner" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                  </button>
+                </div>
+
+                <p class="text-[11px] theme-text-muted text-center pt-1">
+                  Al enviar este formulario acepta nuestro <button type="button" data-open-privacy class="underline theme-text-secondary hover:theme-text-primary">Aviso de Privacidad Integral</button>.
+                </p>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       8. FOOTER INSTITUCIONAL (SOHO GROUP Cross-Links & Legal Governance)
+       ======================================================================== -->
+  <footer class="theme-bg-primary border-t theme-border pt-16 pb-12 theme-text-muted" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b theme-border">
+
+        <!-- Column 1: Brand Identity & Ecosystem Belonging (5 cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="inline-flex items-center bg-white rounded-lg px-4 py-2.5 shadow-sm border border-slate-200/80">
+            <img src="assets/img/logo-solutions.png"
+                 alt="SOLUTIONS by SOHO|GROUP"
+                 width="200"
+                 height="80"
+                 class="h-10 w-auto object-contain" />
+          </div>
+          <p class="text-sm theme-text-secondary leading-relaxed max-w-md">
+            División especializada de <strong class="theme-text-primary font-semibold">SOHO GROUP</strong> dedicada a la ingeniería fiscal, comercio exterior, cumplimiento normativo y escudo contractual de élite para organizaciones de alto desempeño.
+          </p>
+          <div class="pt-1 text-xs font-mono theme-text-muted">
+            DOMINIO OFICIAL // <span class="theme-text-primary font-semibold">www.solutions.sohog.org</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Internal Navigation & Active Divisions (3 cols) -->
+        <div class="lg:col-span-3 space-y-3">
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] theme-text-primary">
+            Unidades &amp; Secciones
+          </h3>
+          <ul class="space-y-2.5 text-sm">
+            <li>
+              <a href="#servicios" class="theme-text-secondary hover:theme-text-primary transition-colors">
+                COMEXT — Comercio Exterior
+              </a>
+            </li>
+            <li>
+              <a href="#servicios" class="theme-text-secondary hover:theme-text-primary transition-colors">
+                DEFENSE — Defensa Fiscal &amp; Legal
+              </a>
+            </li>
+            <li>
+              <a href="#blindaje" class="theme-text-secondary hover:theme-text-primary transition-colors">
+                Arquitectura de Blindaje (Holding)
+              </a>
+            </li>
+            <li>
+              <a href="#metodologia" class="theme-text-secondary hover:theme-text-primary transition-colors">
+                Estándar de Ejecución
+              </a>
+            </li>
+            <li>
+              <a href="#contacto" class="theme-text-secondary hover:theme-text-primary transition-colors">
+                Evaluación Ejecutiva de Riesgo
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Mandatory Cross-Links to SOHO GROUP Ecosystem (4 cols) -->
+        <div class="lg:col-span-4 space-y-3">
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] theme-text-primary">
+            Ecosistema Corporativo SOHO GROUP
+          </h3>
+          <p class="text-xs theme-text-muted leading-relaxed mb-3">
+            Explore las plataformas institucionales y divisiones estratégicas del grupo:
+          </p>
+          <div class="space-y-3">
+            <a href="https://www.sohog.org" target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-between p-3.5 rounded-lg theme-bg-surface border theme-border hover:border-[#0F5E63] group transition-all shadow-sm">
+              <div>
+                <span class="text-xs font-bold theme-text-primary group-hover:theme-accent-label transition-colors block">
+                  Nexo Central SOHO GROUP
+                </span>
+                <span class="text-[11px] font-mono theme-text-muted">https://www.sohog.org</span>
+              </div>
+              <svg class="w-4 h-4 theme-text-muted group-hover:theme-accent-label transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+
+            <a href="https://www.strategies.sohog.org" target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-between p-3.5 rounded-lg theme-bg-surface border theme-border hover:border-[#0F5E63] group transition-all shadow-sm">
+              <div>
+                <span class="text-xs font-bold theme-text-primary group-hover:theme-accent-label transition-colors block">
+                  SOHO STRATEGIES
+                </span>
+                <span class="text-[11px] font-mono theme-text-muted">https://www.strategies.sohog.org</span>
+              </div>
+              <svg class="w-4 h-4 theme-text-muted group-hover:theme-accent-label transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Legal & Copyright Strip -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs theme-text-muted">
+        <p>
+          Copyright 2026 SOHO GROUP / SOHO SOLUTIONS. Todos los derechos reservados.
+        </p>
+        <div class="flex items-center gap-6">
+          <button type="button"
+                  data-open-privacy
+                  class="theme-text-secondary hover:theme-text-primary underline underline-offset-4 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F5E63] rounded-sm">
+            Aviso de Privacidad
+          </button>
+          <a href="https://www.sohog.org" target="_blank" rel="noopener noreferrer" class="theme-text-secondary hover:theme-text-primary transition-colors">
+            Gobernanza Corporativa
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       ACCESSIBLE PRIVACY NOTICE MODAL (Aviso de Privacidad Integral)
+       ======================================================================== -->
+  <div id="privacy-modal"
+       class="hidden fixed inset-0 z-[100] bg-black/75 backdrop-blur-sm flex items-center justify-center p-4"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="privacy-modal-title"
+       aria-hidden="true">
+    <div class="theme-bg-surface border theme-border rounded-xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl max-h-[85vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-4 mb-5 border-b theme-border">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] theme-accent-label block">CUMPLIMIENTO NORMATIVO</span>
+          <h2 id="privacy-modal-title" class="text-lg font-bold theme-text-primary">Aviso de Privacidad Integral — SOHO SOLUTIONS</h2>
+        </div>
+        <button type="button"
+                data-close-privacy
+                class="p-2 rounded-md theme-text-muted hover:theme-text-primary hover:theme-bg-subcard border border-transparent hover:theme-border"
+                aria-label="Cerrar Aviso de Privacidad">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm theme-text-secondary leading-relaxed">
+        <p>
+          <strong class="theme-text-primary">SOHO GROUP / SOHO SOLUTIONS</strong> (con portal institucional en <span class="theme-text-primary font-semibold">www.solutions.sohog.org</span>) es responsable del tratamiento y protección de los datos personales y corporativos recabados a través del Formulario de Evaluación de Riesgo.
+        </p>
+        <p>
+          <strong class="theme-text-primary">Finalidades Primarias:</strong> Los datos proporcionados (Nombre Completo, Empresa u Organización, Correo Corporativo, WhatsApp/Teléfono, Tipo de Operación y Contexto Operativo) serán utilizados exclusivamente para: (I) Realizar la evaluación preliminar de riesgo en materia de comercio exterior (COMEXT) o defensa fiscal y arquitectura contractual (DEFENSE); (II) Establecer contacto ejecutivo por parte de los socios especialistas; y (III) Instrumentar los protocolos de confidencialidad correspondientes.
+        </p>
+        <p>
+          <strong class="theme-text-primary">Confidencialidad y Transferencia:</strong> Su información es tratada bajo estricto secreto profesional y estándares de seguridad administrativa, técnica y física dentro de la arquitectura de SOHO GROUP. No se realizan transferencias a terceros ajenos sin consentimiento expreso, salvo las excepciones previstas por la legislación aplicable.
+        </p>
+        <p>
+          <strong class="theme-text-primary">Derechos ARCO:</strong> Usted puede ejercer en cualquier momento sus derechos de Acceso, Rectificación, Cancelación u Oposición mediante solicitud dirigida a través de los canales oficiales del Nexo Central (<a href="https://www.sohog.org" target="_blank" rel="noopener noreferrer" class="theme-accent-label underline">www.sohog.org</a>).
+        </p>
+      </div>
+
+      <div class="mt-6 pt-4 border-t theme-border flex justify-end">
+        <button type="button"
+                data-close-privacy
+                class="btn-soho-primary px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-md">
+          Entendido y Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SCRIPTS: UI Controller & Mandatory Backend Form Handler Reference
+       ======================================================================== -->
+  <script src="js/ui.js" defer></script>
+  <script src="js/form-handler.js" defer></script>
+</body>
+</html>
