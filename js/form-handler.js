@@ -241,8 +241,78 @@
         return 'El mensaje o contexto operativo no debe exceder 1,500 caracteres.';
       }
       return '';
+    },
+
+    privacidad_aceptada(rawValue, inputEl) {
+      const isChecked = inputEl ? inputEl.checked === true : rawValue === true;
+      if (!isChecked) {
+        return 'Debe confirmar que ha leído el Aviso de Privacidad para atender su solicitud.';
+      }
+      return '';
+    },
+
+    marketing_opt_in() {
+      // Strictly optional control: valid whether checked or unchecked
+      return '';
     }
   };
+
+  /**
+   * Builds the structured and sanitized lead payload including privacy consent metadata.
+   * @param {Object} params
+   * @returns {Object}
+   */
+  function buildLeadPayload({
+    folio,
+    timestampISO,
+    cleanNombre,
+    cleanEmpresa,
+    cleanEmail,
+    cleanWhatsapp,
+    cleanTipoOperacion,
+    cleanAreaNecesidad,
+    targetUnitCode,
+    cleanMensaje,
+    privacyAccepted,
+    marketingOptIn
+  }) {
+    const isPrivacyAccepted = Boolean(privacyAccepted);
+    const isMarketingOptIn = Boolean(marketingOptIn);
+    const rawSignature = `${folio}|${timestampISO}|${cleanNombre}|${cleanEmpresa}|${cleanEmail}|${cleanWhatsapp}|${targetUnitCode}|${isPrivacyAccepted}|${isMarketingOptIn}`;
+
+    return {
+      leadId: folio,
+      timestampISO,
+      origin: 'www.solutions.sohog.org',
+      division: 'SOHO SOLUTIONS',
+      parentGroup: 'SOHO GROUP',
+      recipientEmail: 'info@solutions-mx.com',
+      activeUnitsOnly: true,
+      securityProtocol: 'NDA-CONFIDENTIAL-2026',
+      privacyNoticeVersion: '2026-10-28',
+      privacyAccepted: isPrivacyAccepted,
+      marketingOptIn: isMarketingOptIn,
+      privacyPreferences: {
+        privacyAccepted: isPrivacyAccepted,
+        marketingOptIn: isMarketingOptIn,
+        privacyNoticeVersion: '2026-10-28',
+        recipientEmail: 'info@solutions-mx.com'
+      },
+      integrityChecksum: computeIntegrityHash(rawSignature),
+      prospect: {
+        nombre: cleanNombre,
+        empresa: cleanEmpresa,
+        email: cleanEmail,
+        whatsapp: cleanWhatsapp,
+        tipo_operacion: cleanTipoOperacion,
+        area_necesidad: cleanAreaNecesidad,
+        unidad_asignada: targetUnitCode,
+        mensaje: cleanMensaje || 'Sin comentarios adicionales.',
+        privacidad_aceptada: isPrivacyAccepted,
+        marketing_opt_in: isMarketingOptIn
+      }
+    };
+  }
 
   /**
    * Renders or clears the error state for a specific form field.
@@ -429,7 +499,9 @@
       whatsapp: document.getElementById('whatsapp'),
       tipo_operacion: document.getElementById('tipo_operacion'),
       area_necesidad: document.getElementById('area_necesidad'),
-      mensaje: document.getElementById('mensaje')
+      mensaje: document.getElementById('mensaje'),
+      privacidad_aceptada: document.getElementById('privacidad_aceptada'),
+      marketing_opt_in: document.getElementById('marketing_opt_in')
     };
 
     const errors = {
@@ -439,7 +511,8 @@
       whatsapp: document.getElementById('error-whatsapp'),
       tipo_operacion: document.getElementById('error-tipo_operacion'),
       area_necesidad: document.getElementById('error-area_necesidad'),
-      mensaje: document.getElementById('error-mensaje')
+      mensaje: document.getElementById('error-mensaje'),
+      privacidad_aceptada: document.getElementById('error-privacidad_aceptada')
     };
 
     const submitBtn = document.getElementById('submit-btn');
@@ -460,7 +533,8 @@
       const validator = fieldValidators[fieldKey];
       if (!inputEl || !validator) return true;
 
-      const errorMessage = validator(inputEl.value);
+      const fieldVal = inputEl.type === 'checkbox' ? inputEl.checked : inputEl.value;
+      const errorMessage = validator(fieldVal, inputEl);
       setFieldErrorState(inputEl, errorEl, errorMessage);
       return errorMessage === '';
     };
@@ -474,11 +548,17 @@
       // Initialize aria-invalid="false" for accessibility compliance
       inputEl.setAttribute('aria-invalid', 'false');
 
-      const eventType = inputEl.tagName === 'SELECT' ? 'change' : 'input';
+      const isCheckbox = inputEl.type === 'checkbox';
+      const isSelect = inputEl.tagName === 'SELECT';
+      const eventType = isCheckbox || isSelect ? 'change' : 'input';
 
       inputEl.addEventListener(eventType, () => {
-        // If field currently shows an error, re-validate dynamically as user fixes it
-        if (inputEl.getAttribute('aria-invalid') === 'true' || (errorEl && !errorEl.classList.contains('hidden'))) {
+        // For mandatory checkbox or fields currently showing an error, re-validate immediately
+        if (
+          isCheckbox ||
+          inputEl.getAttribute('aria-invalid') === 'true' ||
+          (errorEl && !errorEl.classList.contains('hidden'))
+        ) {
           validateSingleField(fieldKey);
         }
         // Hide global error banner when user starts correcting fields
@@ -487,15 +567,17 @@
         }
       });
 
-      inputEl.addEventListener('blur', () => {
-        // Sanitize text inputs on blur if malicious pattern was pasted
-        if (inputEl.tagName !== 'SELECT' && hasMaliciousPattern(inputEl.value)) {
-          inputEl.value = sanitizeInput(inputEl.value);
-        }
-        if (inputEl.value.trim() !== '' || inputEl.getAttribute('aria-invalid') === 'true') {
-          validateSingleField(fieldKey);
-        }
-      });
+      if (!isCheckbox) {
+        inputEl.addEventListener('blur', () => {
+          // Sanitize text inputs on blur if malicious pattern was pasted
+          if (!isSelect && hasMaliciousPattern(inputEl.value)) {
+            inputEl.value = sanitizeInput(inputEl.value);
+          }
+          if (inputEl.value.trim() !== '' || inputEl.getAttribute('aria-invalid') === 'true') {
+            validateSingleField(fieldKey);
+          }
+        });
+      }
     });
 
     // Form submission handler
@@ -516,7 +598,7 @@
         }
       });
 
-      // Validate all fields in order
+      // Validate all fields in order (marketing_opt_in is optional and never blocks submission)
       const fieldOrder = [
         'nombre',
         'empresa',
@@ -524,7 +606,8 @@
         'whatsapp',
         'tipo_operacion',
         'area_necesidad',
-        'mensaje'
+        'mensaje',
+        'privacidad_aceptada'
       ];
 
       let firstInvalidElement = null;
@@ -569,6 +652,8 @@
         const cleanAreaNecesidad = sanitizeInput(fields.area_necesidad.value);
         const targetUnitCode = AUTHORIZED_ACTIVE_AREAS[cleanAreaNecesidad] || 'COMEXT';
         const cleanMensaje = sanitizeInput(fields.mensaje ? fields.mensaje.value : '');
+        const privacyAccepted = Boolean(fields.privacidad_aceptada && fields.privacidad_aceptada.checked);
+        const marketingOptIn = Boolean(fields.marketing_opt_in && fields.marketing_opt_in.checked);
 
         // Reflect normalized 10-digit phone and sanitized values back into inputs before reset
         fields.nombre.value = cleanNombre;
@@ -579,33 +664,31 @@
           fields.mensaje.value = cleanMensaje;
         }
 
-        const rawSignature = `${folio}|${timestampISO}|${cleanNombre}|${cleanEmpresa}|${cleanEmail}|${cleanWhatsapp}|${targetUnitCode}`;
-
-        const leadPayload = {
-          leadId: folio,
+        const leadPayload = buildLeadPayload({
+          folio,
           timestampISO,
-          origin: 'www.solutions.sohog.org',
-          division: 'SOHO SOLUTIONS',
-          parentGroup: 'SOHO GROUP',
-          activeUnitsOnly: true,
-          securityProtocol: 'NDA-CONFIDENTIAL-2026',
-          integrityChecksum: computeIntegrityHash(rawSignature),
-          prospect: {
-            nombre: cleanNombre,
-            empresa: cleanEmpresa,
-            email: cleanEmail,
-            whatsapp: cleanWhatsapp,
-            tipo_operacion: cleanTipoOperacion,
-            area_necesidad: cleanAreaNecesidad,
-            unidad_asignada: targetUnitCode,
-            mensaje: cleanMensaje || 'Sin comentarios adicionales.'
-          }
-        };
+          cleanNombre,
+          cleanEmpresa,
+          cleanEmail,
+          cleanWhatsapp,
+          cleanTipoOperacion,
+          cleanAreaNecesidad,
+          targetUnitCode,
+          cleanMensaje,
+          privacyAccepted,
+          marketingOptIn
+        });
 
         await dispatchLeadPayload(leadPayload, form);
 
-        // Reset form and clear all aria-invalid states
+        // Reset form and clear all checkboxes and aria-invalid states
         form.reset();
+        if (fields.privacidad_aceptada) {
+          fields.privacidad_aceptada.checked = false;
+        }
+        if (fields.marketing_opt_in) {
+          fields.marketing_opt_in.checked = false;
+        }
         fieldOrder.forEach((key) => {
           setFieldErrorState(fields[key], errors[key], '');
         });

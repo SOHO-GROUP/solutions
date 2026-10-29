@@ -964,6 +964,39 @@
                   <p class="error-msg hidden text-xs text-red-400 mt-1" id="error-mensaje" role="alert"></p>
                 </div>
 
+                <!-- Privacy Preferences Block (Two Independent Controls: Mandatory Privacy Notice + Optional Marketing Opt-In) -->
+                <div class="pt-3 pb-1 border-t theme-border space-y-3.5" role="group" aria-labelledby="privacy-preferences-heading">
+                  <h4 id="privacy-preferences-heading" class="text-xs font-extrabold uppercase tracking-wider theme-text-primary">
+                    Preferencias de privacidad
+                  </h4>
+
+                  <!-- Control 1: Mandatory Privacy Notice Acceptance -->
+                  <div>
+                    <div class="flex items-start gap-3">
+                      <input type="checkbox"
+                             id="privacidad_aceptada"
+                             name="privacidad_aceptada"
+                             required
+                             class="mt-1 h-4 w-4 rounded border-slate-400 text-[#0F5E63] focus:ring-[#0F5E63] accent-[#0F5E63] shrink-0 cursor-pointer" />
+                      <label for="privacidad_aceptada" class="text-xs sm:text-sm theme-text-secondary leading-relaxed cursor-pointer">
+                        He leído el <button type="button" data-open-privacy class="underline font-semibold theme-accent-text theme-accent-label hover:opacity-80">Aviso de Privacidad</button> y conozco el tratamiento de mis datos para atender mi solicitud. <span class="theme-accent-label font-bold" aria-hidden="true">*</span>
+                      </label>
+                    </div>
+                    <p class="error-msg hidden text-xs text-red-400 mt-1.5" id="error-privacidad_aceptada" role="alert"></p>
+                  </div>
+
+                  <!-- Control 2: Optional Commercial / Newsletter Communications (Unchecked by default, Not required) -->
+                  <div class="flex items-start gap-3">
+                    <input type="checkbox"
+                           id="marketing_opt_in"
+                           name="marketing_opt_in"
+                           class="mt-1 h-4 w-4 rounded border-slate-400 text-[#0F5E63] focus:ring-[#0F5E63] accent-[#0F5E63] shrink-0 cursor-pointer" />
+                    <label for="marketing_opt_in" class="text-xs sm:text-sm theme-text-secondary leading-relaxed cursor-pointer">
+                      Deseo comunicaciones, newsletters y noticias del sector fiscal o comercio exterior de parte de SOLUTIONS.
+                    </label>
+                  </div>
+                </div>
+
                 <!-- Form Feedback Container (Strict Contract ID: form-feedback) -->
                 <div id="form-feedback" class="hidden rounded-md p-4 text-sm font-medium" role="status" aria-live="polite"></div>
 
@@ -979,10 +1012,6 @@
                     </svg>
                   </button>
                 </div>
-
-                <p class="text-[11px] theme-text-muted text-center pt-1">
-                  Al enviar este formulario acepta nuestro <button type="button" data-open-privacy class="underline theme-text-secondary hover:theme-text-primary">Aviso de Privacidad Integral</button>.
-                </p>
 
               </form>
             </div>
@@ -1138,7 +1167,7 @@
   </div>
 
   <!-- ========================================================================
-       ACCESSIBLE PRIVACY NOTICE MODAL (Aviso de Privacidad Integral)
+       ACCESSIBLE PRIVACY NOTICE MODAL (Aviso de Privacidad Integral — 11 Puntos)
        ======================================================================== -->
   <div id="privacy-modal"
        class="hidden fixed inset-0 z-[100] bg-black/75 backdrop-blur-sm flex items-center justify-center p-4"
@@ -1146,15 +1175,21 @@
        aria-modal="true"
        aria-labelledby="privacy-modal-title"
        aria-hidden="true">
-    <div class="theme-bg-surface border theme-border rounded-xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl max-h-[85vh] overflow-y-auto">
-      <div class="flex items-center justify-between pb-4 mb-5 border-b theme-border">
+    <div class="theme-bg-surface border theme-border rounded-xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl max-h-[85vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between pb-4 mb-5 border-b theme-border shrink-0 gap-4">
         <div>
           <span class="text-xs font-bold uppercase tracking-[0.2em] theme-accent-label block">CUMPLIMIENTO NORMATIVO</span>
-          <h2 id="privacy-modal-title" class="text-lg font-bold theme-text-primary">Aviso de Privacidad Integral — SOHO SOLUTIONS</h2>
+          <h2 id="privacy-modal-title" class="text-lg sm:text-xl font-extrabold theme-text-primary mt-0.5">
+            AVISO DE PRIVACIDAD INTEGRAL — SOLUTIONS
+          </h2>
+          <p class="text-xs theme-text-muted mt-1">
+            Última actualización: 28 de octubre de 2026
+          </p>
         </div>
         <button type="button"
                 data-close-privacy
-                class="p-2 rounded-md theme-text-muted hover:theme-text-primary hover:theme-bg-subcard border border-transparent hover:theme-border"
+                class="p-2 rounded-md theme-text-muted hover:theme-text-primary hover:theme-bg-subcard border border-transparent hover:theme-border shrink-0"
                 aria-label="Cerrar Aviso de Privacidad">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -1162,22 +1197,242 @@
         </button>
       </div>
 
-      <div class="space-y-4 text-xs sm:text-sm theme-text-secondary leading-relaxed">
-        <p>
-          <strong class="theme-text-primary">SOHO GROUP / SOHO SOLUTIONS</strong> (con portal institucional en <span class="theme-text-primary font-semibold">www.solutions.sohog.org</span>) es responsable del tratamiento y protección de los datos personales y corporativos recabados a través del Formulario de Evaluación de Riesgo.
-        </p>
-        <p>
-          <strong class="theme-text-primary">Finalidades Primarias:</strong> Los datos proporcionados (Nombre Completo, Empresa u Organización, Correo Corporativo, WhatsApp/Teléfono, Tipo de Operación y Contexto Operativo) serán utilizados exclusivamente para: (I) Realizar la evaluación preliminar de riesgo en materia de comercio exterior (COMEXT) o defensa fiscal y arquitectura contractual (DEFENSE); (II) Establecer contacto ejecutivo por parte de los socios especialistas; y (III) Instrumentar los protocolos de confidencialidad correspondientes.
-        </p>
-        <p>
-          <strong class="theme-text-primary">Confidencialidad y Transferencia:</strong> Su información es tratada bajo estricto secreto profesional y estándares de seguridad administrativa, técnica y física dentro de la arquitectura de SOHO GROUP. No se realizan transferencias a terceros ajenos sin consentimiento expreso, salvo las excepciones previstas por la legislación aplicable.
-        </p>
-        <p>
-          <strong class="theme-text-primary">Derechos ARCO:</strong> Usted puede ejercer en cualquier momento sus derechos de Acceso, Rectificación, Cancelación u Oposición mediante solicitud dirigida a través de los canales oficiales del Nexo Central (<a href="https://www.sohog.org" target="_blank" rel="noopener noreferrer" class="theme-accent-label underline">www.sohog.org</a>).
-        </p>
+      <!-- Scrollable Modal Body (11 Complete Sections) -->
+      <div class="overflow-y-auto pr-2 space-y-5 text-xs sm:text-sm theme-text-secondary leading-relaxed">
+
+        <!-- 1. Identidad y domicilio del responsable -->
+        <section class="space-y-2">
+          <h3 class="text-sm sm:text-base font-bold theme-text-primary">
+            1. Identidad y domicilio del responsable
+          </h3>
+          <p>
+            Michel Aguilar García, quien opera comercialmente bajo la marca <strong class="theme-text-primary">SOLUTIONS</strong>, con domicilio en Mérida, Yucatán, México, es responsable del tratamiento, uso, almacenamiento y protección de los datos personales recabados a través de su sitio web, formularios electrónicos y canales oficiales de comunicación.
+          </p>
+          <p>
+            Para cualquier asunto relacionado con el tratamiento de datos personales, ponemos a disposición el siguiente correo electrónico: <a href="mailto:info@solutions-mx.com" class="font-semibold theme-accent-label underline">info@solutions-mx.com</a>.
+          </p>
+          <p>
+            Domicilio completo para efectos del presente aviso: <span class="font-mono text-xs theme-text-primary">[CALLE, NÚMERO, COLONIA Y CÓDIGO POSTAL PENDIENTES DE INCORPORAR]</span>.
+          </p>
+        </section>
+
+        <!-- 2. Datos personales recabados -->
+        <section class="space-y-2">
+          <h3 class="text-sm sm:text-base font-bold theme-text-primary">
+            2. Datos personales recabados
+          </h3>
+          <p>
+            Para atender solicitudes de información y establecer contacto comercial, SOLUTIONS podrá recabar:
+          </p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Nombre completo.</li>
+            <li>Empresa u organización.</li>
+            <li>Correo electrónico.</li>
+            <li>Número telefónico o WhatsApp.</li>
+            <li>Tipo de operación o servicio requerido.</li>
+            <li>Información proporcionada voluntariamente en los campos de contacto y descripción de necesidades.</li>
+          </ul>
+          <p>
+            Se solicita a los usuarios evitar proporcionar datos personales sensibles o información confidencial de terceros mediante formularios de contacto inicial, salvo que exista un procedimiento específico y adecuado para su tratamiento.
+          </p>
+        </section>
+
+        <!-- 3. Finalidades principales del tratamiento -->
+        <section class="space-y-2">
+          <h3 class="text-sm sm:text-base font-bold theme-text-primary">
+            3. Finalidades principales del tratamiento
+          </h3>
+          <p>
+            Los datos personales serán utilizados para las siguientes finalidades necesarias:
+          </p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Recibir, registrar y atender solicitudes de información, citas, diagnósticos o evaluaciones preliminares.</li>
+            <li>Establecer contacto comercial inicial con el solicitante.</li>
+            <li>Identificar necesidades relacionadas con servicios fiscales, legales, corporativos, de cumplimiento normativo y comercio exterior.</li>
+            <li>Programar reuniones, entrevistas y sesiones de diagnóstico.</li>
+            <li>Dar seguimiento a solicitudes comerciales y proporcionar información relacionada con el servicio requerido.</li>
+            <li>Elaborar y presentar propuestas comerciales cuando sean solicitadas.</li>
+            <li>Mantener las comunicaciones necesarias para establecer y, en su caso, administrar una relación comercial o contractual.</li>
+          </ul>
+          <p>
+            Estas finalidades están directamente relacionadas con la solicitud realizada por el usuario.
+          </p>
+        </section>
+
+        <!-- 4. Finalidades secundarias -->
+        <section class="space-y-2">
+          <h3 class="text-sm sm:text-base font-bold theme-text-primary">
+            4. Finalidades secundarias
+          </h3>
+          <p>
+            Adicionalmente, y de manera opcional, SOLUTIONS podrá utilizar los datos de contacto para:
+          </p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Enviar boletines informativos y newsletters.</li>
+            <li>Compartir artículos especializados, publicaciones y contenidos educativos.</li>
+            <li>Comunicar novedades fiscales, legales, corporativas y de comercio exterior.</li>
+            <li>Difundir eventos, actividades, capacitaciones y publicaciones.</li>
+            <li>Informar sobre nuevos servicios, promociones y oportunidades comerciales.</li>
+          </ul>
+          <p>
+            La autorización para estas finalidades es independiente de la solicitud inicial de contacto.
+          </p>
+          <p>
+            El usuario podrá negarse a recibir comunicaciones promocionales sin afectar la atención de sus solicitudes ni la prestación de los servicios contratados.
+          </p>
+          <p>
+            Las comunicaciones secundarias se realizarán cuando exista la autorización correspondiente y ofrecerán mecanismos para solicitar su cancelación.
+          </p>
+        </section>
+
+        <!-- 5. Compartición de datos con proveedores y terceros -->
+        <section class="space-y-2">
+          <h3 class="text-sm sm:text-base font-bold theme-text-primary">
+            5. Compartición de datos con proveedores y terceros
+          </h3>
+          <p>
+            Para cumplir las finalidades señaladas, SOLUTIONS podrá recurrir a proveedores de servicios tecnológicos, alojamiento web, correo electrónico, almacenamiento digital, administración de información y comunicaciones.
+          </p>
+          <p>
+            Asimismo, cuando la naturaleza de una solicitud lo requiera, podrá colaborar con profesionales o especialistas externos en materias fiscales, legales, corporativas y de comercio exterior.
+          </p>
+          <p>
+            Los proveedores que traten información por cuenta de SOLUTIONS deberán sujetarse a obligaciones de confidencialidad y protección de datos.
+          </p>
+          <p>
+            Cuando sea necesario transferir datos personales a terceros que actúen como responsables independientes, SOLUTIONS informará las finalidades correspondientes y solicitará el consentimiento del titular cuando legalmente proceda.
+          </p>
+          <p>
+            No se comercializarán bases de datos personales con terceros.
+          </p>
+        </section>
+
+        <!-- 6. Conservación y protección de los datos -->
+        <section class="space-y-2">
+          <h3 class="text-sm sm:text-base font-bold theme-text-primary">
+            6. Conservación y protección de los datos
+          </h3>
+          <p>
+            Los datos personales serán conservados únicamente durante el tiempo necesario para cumplir las finalidades que motivaron su recopilación.
+          </p>
+          <p>
+            Cuando una solicitud derive en una relación comercial o contractual, la información podrá conservarse durante los periodos necesarios para cumplir las obligaciones contractuales, fiscales y legales aplicables.
+          </p>
+          <p>
+            La información utilizada para comunicaciones informativas o comerciales dejará de emplearse para tales finalidades cuando el titular retire su autorización o ejerza los derechos correspondientes, sin perjuicio de las obligaciones legales de conservación.
+          </p>
+          <p>
+            SOLUTIONS aplicará medidas administrativas, técnicas y físicas apropiadas para proteger la información contra acceso no autorizado, pérdida, alteración, divulgación o uso indebido.
+          </p>
+        </section>
+
+        <!-- 7. Derechos ARCO y revocación del consentimiento -->
+        <section class="space-y-2">
+          <h3 class="text-sm sm:text-base font-bold theme-text-primary">
+            7. Derechos ARCO y revocación del consentimiento
+          </h3>
+          <p>
+            El titular podrá ejercer sus derechos de:
+          </p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong class="theme-text-primary">Acceso:</strong> conocer los datos personales que SOLUTIONS conserva y las condiciones de su tratamiento.</li>
+            <li><strong class="theme-text-primary">Rectificación:</strong> solicitar la corrección de información inexacta o incompleta.</li>
+            <li><strong class="theme-text-primary">Cancelación:</strong> solicitar la eliminación de sus datos cuando legalmente proceda.</li>
+            <li><strong class="theme-text-primary">Oposición:</strong> oponerse al tratamiento para determinadas finalidades.</li>
+          </ul>
+          <p>
+            Asimismo, podrá solicitar la revocación del consentimiento otorgado, conforme a la legislación aplicable.
+          </p>
+          <p>
+            Las solicitudes deberán enviarse a: <a href="mailto:info@solutions-mx.com" class="font-semibold theme-accent-label underline">info@solutions-mx.com</a>.
+          </p>
+          <p>
+            El mensaje deberá incluir:
+          </p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Nombre completo del titular.</li>
+            <li>Medio para recibir notificaciones y respuesta.</li>
+            <li>Descripción clara del derecho que desea ejercer.</li>
+            <li>Información que permita identificar los datos relacionados con su solicitud.</li>
+            <li>Documentación necesaria para acreditar su identidad o representación, cuando corresponda.</li>
+          </ul>
+          <p>
+            SOLUTIONS comunicará su determinación dentro de los plazos establecidos por la legislación aplicable y, cuando resulte procedente, realizará las acciones correspondientes.
+          </p>
+          <p>
+            El mismo correo podrá utilizarse para solicitar la baja de comunicaciones promocionales.
+          </p>
+        </section>
+
+        <!-- 8. Cookies y tecnologías similares -->
+        <section class="space-y-2">
+          <h3 class="text-sm sm:text-base font-bold theme-text-primary">
+            8. Cookies y tecnologías similares
+          </h3>
+          <p>
+            SOLUTIONS podrá utilizar tecnologías técnicas necesarias para el funcionamiento, seguridad y operación de su sitio web.
+          </p>
+          <p>
+            Actualmente no se tiene prevista la utilización de herramientas propias de seguimiento publicitario, remarketing o elaboración de perfiles comerciales mediante cookies.
+          </p>
+          <p>
+            Antes de incorporar herramientas adicionales de analítica, publicidad o seguimiento, SOLUTIONS revisará y actualizará su Política de Cookies e implementará los mecanismos de consentimiento que correspondan.
+          </p>
+          <p>
+            La información detallada sobre las tecnologías efectivamente utilizadas estará disponible en la Política de Cookies publicada en el sitio web.
+          </p>
+        </section>
+
+        <!-- 9. Medios de recopilación y recepción de información -->
+        <section class="space-y-2">
+          <h3 class="text-sm sm:text-base font-bold theme-text-primary">
+            9. Medios de recopilación y recepción de información
+          </h3>
+          <p>
+            Los datos personales proporcionados mediante el formulario de contacto o solicitud de diagnóstico serán remitidos al correo electrónico: <a href="mailto:info@solutions-mx.com" class="font-semibold theme-accent-label underline">info@solutions-mx.com</a>.
+          </p>
+          <p>
+            SOLUTIONS utilizará esta información para atender la solicitud, establecer comunicación con el interesado y realizar el seguimiento correspondiente.
+          </p>
+          <p>
+            El envío del formulario no constituye por sí mismo una contratación ni establece automáticamente una relación profesional o contractual.
+          </p>
+        </section>
+
+        <!-- 10. Modificaciones al Aviso de Privacidad -->
+        <section class="space-y-2">
+          <h3 class="text-sm sm:text-base font-bold theme-text-primary">
+            10. Modificaciones al Aviso de Privacidad
+          </h3>
+          <p>
+            SOLUTIONS podrá actualizar este Aviso de Privacidad para reflejar modificaciones en sus operaciones, servicios, tecnologías utilizadas o disposiciones legales aplicables.
+          </p>
+          <p>
+            Las actualizaciones estarán disponibles mediante los canales digitales oficiales de SOLUTIONS y, cuando legalmente corresponda, se comunicarán por medios adicionales.
+          </p>
+        </section>
+
+        <!-- 11. Contacto -->
+        <section class="space-y-2 pt-2 border-t theme-border">
+          <h3 class="text-sm sm:text-base font-bold theme-text-primary">
+            11. Contacto
+          </h3>
+          <p>
+            Para consultas relacionadas con este Aviso de Privacidad, protección de datos personales, ejercicio de derechos ARCO o cancelación de comunicaciones informativas:
+          </p>
+          <div class="p-4 rounded-lg theme-bg-subcard border theme-border space-y-1 text-xs sm:text-sm">
+            <p class="font-extrabold theme-text-primary">SOLUTIONS</p>
+            <p><strong class="theme-text-primary">Responsable:</strong> Michel Aguilar García</p>
+            <p><strong class="theme-text-primary">Ubicación:</strong> Mérida, Yucatán, México</p>
+            <p><strong class="theme-text-primary">Correo electrónico:</strong> <a href="mailto:info@solutions-mx.com" class="font-semibold theme-accent-label underline">info@solutions-mx.com</a></p>
+            <p><strong class="theme-text-primary">Fecha de actualización:</strong> 28 de octubre de 2026.</p>
+          </div>
+        </section>
+
       </div>
 
-      <div class="mt-6 pt-4 border-t theme-border flex justify-end">
+      <!-- Modal Footer -->
+      <div class="mt-6 pt-4 border-t theme-border flex justify-end shrink-0">
         <button type="button"
                 data-close-privacy
                 class="btn-soho-primary px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-md">
