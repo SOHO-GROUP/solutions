@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAuthorityCounters();
   initServicePreselection();
   initPrivacyModal();
+  initCookieBanner();
 });
 
 /**
@@ -221,4 +222,45 @@ function initPrivacyModal() {
       closeModal();
     }
   });
+}
+
+/**
+ * 7. One-time Cookie & Transparency Banner (Bottom Bar + Footer Trigger)
+ */
+function initCookieBanner() {
+  const banner = document.getElementById('cookie-banner');
+  const openBtns = document.querySelectorAll('[data-open-cookies]');
+  const closeBtns = document.querySelectorAll('[data-close-cookies]');
+  const COOKIE_STORAGE_KEY = 'soho_solutions_cookies_accepted';
+
+  if (!banner) return;
+
+  const showBanner = (e) => {
+    if (e) e.preventDefault();
+    banner.classList.remove('hidden');
+  };
+
+  const acceptAndHideBanner = () => {
+    banner.classList.add('hidden');
+    try {
+      localStorage.setItem(COOKIE_STORAGE_KEY, 'true');
+    } catch (_) {
+      // Ignore storage restrictions
+    }
+  };
+
+  // Automatically show once if visitor has not dismissed it yet
+  let alreadyAccepted = false;
+  try {
+    alreadyAccepted = localStorage.getItem(COOKIE_STORAGE_KEY) === 'true';
+  } catch (_) {
+    alreadyAccepted = false;
+  }
+
+  if (!alreadyAccepted) {
+    showBanner();
+  }
+
+  openBtns.forEach((btn) => btn.addEventListener('click', showBanner));
+  closeBtns.forEach((btn) => btn.addEventListener('click', acceptAndHideBanner));
 }
